@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'sha256-OztSRWnpsvgFAwH5nCMyUltzEje2KpNKu6y8FU4hCIE='; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Join a group on JuntoCash</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.svg" alt="JuntoCash">
+    <h1 lang="en">Join a group on JuntoCash</h1>
+    <h1 lang="pt" hidden>Entrar em um grupo no JuntoCash</h1>
+  </header>
+
+  <div lang="en">
+    <p class="lead center">This link opens in the JuntoCash app.</p>
+    <p class="center" data-with-invite><a class="button" data-open href="junto://join">Open in JuntoCash</a></p>
+    <p class="center" data-without-invite hidden>Part of this link is missing. Ask for it again.</p>
+    <p class="center">Don’t have the app yet? Get it on Google Play, then tap the link again.</p>
+    <p class="center"><a class="button quiet" href="https://play.google.com/store/apps/details?id=dev.tekolabs.juntocash">Get JuntoCash on Google Play</a></p>
+    <p class="soft center">The invitation is in the link. This page sends it nowhere: it only hands it to the app on your phone.</p>
+  </div>
+
+  <div lang="pt" hidden>
+    <p class="lead center">Este link abre no app JuntoCash.</p>
+    <p class="center" data-with-invite><a class="button" data-open href="junto://join">Abrir no JuntoCash</a></p>
+    <p class="center" data-without-invite hidden>Falta uma parte deste link. Peça o link de novo.</p>
+    <p class="center">Ainda não tem o app? Baixe no Google Play e toque no link de novo.</p>
+    <p class="center"><a class="button quiet" href="https://play.google.com/store/apps/details?id=dev.tekolabs.juntocash">Baixar o JuntoCash no Google Play</a></p>
+    <p class="soft center">O convite está no link. Esta página não o envia a lugar nenhum: só o entrega ao app no seu celular.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="./">JuntoCash</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms</a></p>
+</footer>
+<script>
+var invite = location.hash;
+var portuguese = (navigator.language || "").toLowerCase().indexOf("pt") === 0;
+document.documentElement.lang = portuguese ? "pt" : "en";
+document.querySelectorAll("[lang]").forEach(function (part) {
+  if (part !== document.documentElement) part.hidden = (part.lang === "pt") !== portuguese;
+});
+document.querySelectorAll("[data-open]").forEach(function (link) { link.href = "junto://join" + invite; });
+document.querySelectorAll("[data-with-invite]").forEach(function (part) { part.hidden = invite.length < 2; });
+document.querySelectorAll("[data-without-invite]").forEach(function (part) { part.hidden = invite.length >= 2; });
+</script>
+</body>
+</html>

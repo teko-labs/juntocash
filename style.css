@@ -1,0 +1,102 @@
+/* JuntoCash's public pages, in the app's own colours and type: its background, a white card, its green.
+   Nothing is asked of another site: the headings' font is served from here, and the text is in the reader's own. */
+@font-face {
+  font-family: "Outfit";
+  font-weight: 700;
+  font-display: swap;
+  src: url("outfit-bold.ttf") format("truetype");
+}
+
+:root {
+  --ground: #F5F4F1;
+  --card: #FFFFFF;
+  --ink: #1A1918;
+  --ink-soft: #6D6C6A;
+  --line: #E5E4E1;
+  --green: #3D8A5A;
+  --green-deep: #2F7A4C;
+  --mint: #C8F0D8;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 28px 36px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+}
+
+header { text-align: center; }
+
+header img { width: 96px; height: 96px; border-radius: 22px; }
+
+h1, h2 { font-family: "Outfit", system-ui, sans-serif; font-weight: 700; text-wrap: balance; }
+
+h1 { margin: 12px 0 4px; font-size: 2.2rem; line-height: 1.15; }
+
+h2 { margin: 32px 0 8px; font-size: 1.25rem; }
+
+p, ul { margin: 0 0 14px; }
+
+ul { padding-left: 22px; }
+
+li { margin-bottom: 6px; }
+
+a { color: var(--green-deep); }
+
+code { font-size: 0.95em; }
+
+.lead { font-size: 1.15rem; }
+
+.soft { color: var(--ink-soft); }
+
+.center { text-align: center; }
+
+[hidden] { display: none !important; }
+
+.button {
+  display: inline-block;
+  min-width: 260px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--card);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button.quiet { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+
+.table { overflow-x: auto; margin: 0 0 14px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-top: 1px solid var(--line); }
+
+thead th { border-top: 0; font-weight: 600; }
+
+footer {
+  max-width: 720px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+footer p { margin: 0 0 6px; }
+
+footer a { color: var(--ink-soft); }
