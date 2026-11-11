@@ -100,3 +100,19 @@ footer {
 footer p { margin: 0 0 6px; }
 
 footer a { color: var(--ink-soft); }
+
+/* The way to the app, under the opening line: the button, and on a computer a QR code for the phone beside it. */
+.get { display: flex; flex-wrap: wrap; gap: 18px 24px; align-items: center; justify-content: center; margin: 22px 0 26px; }
+
+.get .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+
+.get .button svg { width: 18px; height: 18px; flex: none; }
+
+.qr { display: grid; justify-items: center; gap: 6px; margin: 0; }
+
+.qr img { width: 112px; height: 112px; padding: 6px; background: #FFFFFF; border: 1px solid var(--line); border-radius: 10px; }
+
+.qr figcaption { color: var(--ink-soft); font-size: 0.85rem; }
+
+/* On a phone the button is the way: a code to scan with the phone in your hand does nothing. */
+@media (max-width: 640px), (pointer: coarse) { .qr { display: none; } }
